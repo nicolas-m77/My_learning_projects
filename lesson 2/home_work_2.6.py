@@ -20,9 +20,10 @@
 }
 """
 
-num = int(input("Введите количество товаров: "))
-general_list = []
-for count in range(num):
+num = int(input("Введите количество товаров: "))  # Вводим количество товаров в нашем списке
+general_list = []  # Создаем пустой список, в который поместим всю вводимую информацию
+
+for count in range(num):  # Запрашиваем нужную информацию и заполняем наш список
     name = input("Введите название товара: ")
     price = int(input("Введите цену: "))
     quantity = int(input("Введите количество: "))
@@ -31,16 +32,17 @@ for count in range(num):
     my_tuple = (count + 1, my_dict)
     general_list.append(my_tuple)
 
-names = []
-prices = []
-quantities = []
-my_measures = []
+names = []  # Пустой список, в который позже войдут все названия товаров
+prices = []  # Пустой список, в который позже войдут все цены
+quantities = []  # Пустой список, в который позже войдут все количества
+my_measures = []    # Пустой список, в который позже войдут все единицы измерений
 
 for i in range(len(general_list)):
     names.append(general_list[i][1]['название'])
     prices.append(general_list[i][1]['цена'])
     quantities.append(general_list[i][1]['количество'])
     my_measures.append(general_list[i][1]['eд'])
+
 new_dict = dict(название=names, цена=prices,
                 количество=quantities, ед=list(set(my_measures)))
 
