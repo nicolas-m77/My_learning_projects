@@ -19,3 +19,29 @@
 “ед”: [“шт.”]
 }
 """
+
+num = int(input("Введите количество товаров: "))
+general_list = []
+for count in range(num):
+    name = input("Введите название товара: ")
+    price = int(input("Введите цену: "))
+    quantity = int(input("Введите количество: "))
+    my_measure = input("Введите единицы измерения: ")
+    my_dict = dict(название=name, цена=price, количество=quantity, eд=my_measure)
+    my_tuple = (count + 1, my_dict)
+    general_list.append(my_tuple)
+
+names = []
+prices = []
+quantities = []
+my_measures = []
+
+for i in range(len(general_list)):
+    names.append(general_list[i][1]['название'])
+    prices.append(general_list[i][1]['цена'])
+    quantities.append(general_list[i][1]['количество'])
+    my_measures.append(general_list[i][1]['eд'])
+new_dict = dict(название=names, цена=prices,
+                количество=quantities, ед=list(set(my_measures)))
+
+print(new_dict)
