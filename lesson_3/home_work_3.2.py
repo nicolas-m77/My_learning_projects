@@ -10,5 +10,12 @@ def user_data(name, last_name, born, city, mail, phone):
     return dict(имя=name, фамилия=last_name, год=born, город=city, email=mail, телефон=phone)
 
 
-print(user_data(name="Николай", last_name="Макаров", born=1977, city="Тюмень",
-                mail="i.n.makarov@mail.ru", phone="89829094303"))
+user_name = input("Введите имя: ")
+user_surname = input("Введите фамилию: ")
+user_born = int(input("Введите год рождения: "))
+user_city = input("Введите город проживания: ")
+user_mail = input("Введите email: ")
+user_phone = input("Введите номер телефона: ")
+
+print(user_data(name=user_name, last_name=user_surname, born=user_born, city=user_city,
+                mail=user_mail, phone=user_phone))
