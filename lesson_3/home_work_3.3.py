@@ -14,4 +14,4 @@ def sum_of_max(a, b, c):
 x = float(input("Введите любое число: "))
 y = float(input("Введите любое число: "))
 z = float(input("Введите любое число: "))
-print(sum_of_max(x, y, z))
+print("Сумма двух наибольших введенных чисел:", sum_of_max(x, y, z))
