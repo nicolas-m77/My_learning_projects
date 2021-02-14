@@ -7,6 +7,7 @@
 
 
 def user_data(name, last_name, born, city, mail, phone):
+
     return dict(имя=name, фамилия=last_name, год=born, город=city, email=mail, телефон=phone)
 
 
