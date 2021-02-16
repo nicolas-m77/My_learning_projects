@@ -6,3 +6,18 @@
 Если специальный символ введен после нескольких чисел, то вначале нужно добавить
 сумму этих чисел к полученной ранее сумме и после этого завершить программу."""
 
+
+whole_sum = 0
+stop_doing = 0
+while stop_doing != 1:
+    my_string = input("Введите строку чисел, разделенных пробелом: ")
+    my_list = my_string.split(" ")
+    my_sum = 0
+    for elem in my_list:
+        int_elem = int(elem)
+        if int_elem == 0:
+            stop_doing = 1
+            break
+        my_sum += int_elem
+    whole_sum += my_sum
+    print(whole_sum)
