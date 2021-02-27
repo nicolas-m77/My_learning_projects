@@ -3,7 +3,7 @@
 Об окончании ввода данных свидетельствует пустая строка.
 """
 print('Введите данные построчно: ')
-with open('new.txt', 'w', encoding='UTF-8') as f:
+with open('for_5.1.txt', 'w', encoding='UTF-8') as f:
     while True:
         my_string = input()
         if len(my_string) == 0:

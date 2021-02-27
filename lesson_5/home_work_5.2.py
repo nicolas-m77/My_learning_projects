@@ -2,9 +2,11 @@
 Создать текстовый файл (не программно), сохранить в нем несколько строк,
 выполнить подсчет количества строк, количества слов в каждой строке.
 """
-ind = 0
-with open('new.txt', 'r', encoding='utf-8') as n:
-    for i in n:
-        ind += 1
-        print(f"В строке {ind}: {len(i.split())} слов")
-print(f"Всего в текстовом файле {ind} строк")
+
+number = 0
+with open('for_5.2.txt', 'r', encoding='utf-8') as f:
+    for line in f:
+        number += 1
+        print(f"В строке {number}: {len(line.split())} слов")
+
+print(f"Всего в текстовом файле {number} строк")

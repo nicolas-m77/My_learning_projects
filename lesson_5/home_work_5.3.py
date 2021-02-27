@@ -5,13 +5,13 @@
 """
 
 fund = 0  # Переменная для вычисления фонда заработной платы
-stuf = 0  # Переменная для подсчета количества сотрудников
-with open('salary.txt', 'r', encoding='utf-8') as fail:
+stuff = 0  # Переменная для подсчета количества сотрудников
+with open('for_5.3.txt', 'r', encoding='utf-8') as f:
     print('Следующие сотрудники имеют зарплату меньше 20000 рублей: ')
-    for line in fail:
-        war = line.split()
-        fund += int(war[1])
-        stuf += 1
-        if int(war[1]) < 20000:
-            print(f'Сотрудник {war[0]} имеет зарплату {war[1]} рублей')
-print(f'Средняя величина дохода сотрудников составляет {fund / stuf} рублей')
+    for line in f:
+        list_line = line.split()
+        fund += int(list_line[1])
+        stuff += 1
+        if int(list_line[1]) < 20000:
+            print(f'{list_line[0]} - {list_line[1]} рублей')
+print(f'Средняя величина дохода сотрудников составляет {fund / stuff} рублей')
