@@ -12,3 +12,18 @@
 Пример словаря:
 {“Информатика”: 170, “Физика”: 40, “Физкультура”: 30}
 """
+
+with open('for_5.6.txt', 'r', encoding='utf-8') as f:
+    result = {}
+    for line in f:
+        line = line.split()
+        summa = 0
+        for i in line:
+            number = ''.join(filter(lambda ind: ind.isdigit(), i))
+            if number == '':
+                continue
+            summa += int(number)
+        key = line[0].replace(':', '')
+        val = summa
+        result[key] = val
+    print(result)
