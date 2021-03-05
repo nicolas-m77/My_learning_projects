@@ -9,12 +9,12 @@
 
 
 class Road:
-    def __init__(self, _lenght, _width):
-        self.lenght = _lenght
-        self.width = _width
+    def __init__(self, lenght, width):
+        self._lenght = lenght
+        self._width = width
 
     def surfacing(self):
-        return self.lenght * self.width * 25 * 5
+        return self._lenght * self._width * 25 * 5
 
 
 a = int(input('Введите длину дороги (м): '))

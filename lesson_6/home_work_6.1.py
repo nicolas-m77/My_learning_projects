@@ -12,28 +12,21 @@ import time
 
 
 class TrafficLight:
-    def __init__(self, color='Мигающий желтый'):
-        self.color = color
+    __color = 'Мигающий желтый'
 
     def running(self):
-        print(f'Горит {self.color} свет')
+        TrafficLight.__color = 'красный'
+        print(f'Горит {TrafficLight.__color} свет')
+        time.sleep(7)
+        TrafficLight.__color = 'желтый'
+        print(f'Горит {TrafficLight.__color} свет')
+        time.sleep(2)
+        TrafficLight.__color = 'зеленый'
+        print(f'Горит {TrafficLight.__color} свет')
+        time.sleep(10)
 
 
 my_traffic = TrafficLight()
 
-while True:
-    my_traffic.color = 'Красный'
+for i in range(3):
     my_traffic.running()
-    for i in range(1, 8):
-        time.sleep(1)
-        print(i)
-    my_traffic.color = 'Желтый'
-    my_traffic.running()
-    for i in range(1, 3):
-        time.sleep(1)
-        print(i)
-    my_traffic.color = 'Зеленый'
-    my_traffic.running()
-    for i in range(1, 11):
-        time.sleep(1)
-        print(i)
