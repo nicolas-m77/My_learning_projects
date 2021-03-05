@@ -85,7 +85,9 @@ my_police = PoliceCar(80, 'синий', 'полиция')
 print(my_police.name)
 print('Направление движения:', my_police.direction)
 my_police.show_speed()
+print(f'Полиция?', my_police.is_police)
 
 my_work_car = WorkCar(65, 'оранжевый', 'зил')
 print(my_work_car.name)
 my_work_car.show_speed()
+
