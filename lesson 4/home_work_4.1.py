@@ -7,11 +7,11 @@ from sys import argv
 
 
 def salary(a, b, c):
-    print(f"Заработная плата сотрудника составляет {a * b + c} рублей")
+    return a * b + c
 
 
 hours = int(argv[1])
 rate = int(argv[2])
 bonus = int(argv[3])
 
-salary(hours, rate, bonus)
+print(f'Заработная плата сотрудника составляет {salary(hours, rate, bonus)} рублей')
