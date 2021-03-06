@@ -35,32 +35,21 @@ class Car:
 
 
 class TownCar(Car):
-    def __init__(self, speed, color, name):
-        super(TownCar, self).__init__(speed, color, name)
-        self.is_police = False
-        self.direction = 'пока прямо'
 
     def show_speed(self):
-        print(f'Скорость машины {self.name}: {self.speed} км/ч')
+        super().show_speed()
         if self.speed > 60:
             print('Скорость превышена')
 
 
 class SportCar(Car):
     def __init__(self, speed, color, name):
-        super(SportCar, self).__init__(speed, color, name)
-        self.is_police = False
-        self.direction = 'пока прямо'
+        super().__init__(speed, color, name)
 
 
 class WorkCar(Car):
-    def __init__(self, speed, color, name):
-        super(WorkCar, self).__init__(speed, color, name)
-        self.is_police = False
-        self.direction = 'пока прямо'
-
     def show_speed(self):
-        print(f'Скорость машины {self.name}: {self.speed} км/ч')
+        super().show_speed()
         if self.speed > 40:
             print('Скорость превышена')
 
@@ -69,7 +58,6 @@ class PoliceCar(Car):
     def __init__(self, speed, color, name):
         super(PoliceCar, self).__init__(speed, color, name)
         self.is_police = True
-        self.direction = 'пока прямо'
 
 
 my_car = Car(65, 'красный', 'жигули')
@@ -91,3 +79,8 @@ my_work_car = WorkCar(65, 'оранжевый', 'зил')
 print(my_work_car.name)
 my_work_car.show_speed()
 
+my_sport = SportCar(120, 'золотистый', 'феррари')
+print(my_sport.name)
+my_sport.turn('налево')
+my_sport.show_speed()
+print(f'Полиция?', my_sport.is_police)
