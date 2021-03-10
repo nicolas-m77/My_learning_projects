@@ -28,19 +28,48 @@ class Cell:
         self.number = number
         self.row = row
 
+    def __str__(self):
+        return f'клетка с количеством ячеек {self.number}'
+
     def __add__(self, other):
-        return self.number + other.number
+        return f'В результате сложения произошло объединение двух клеток. ' \
+               f'Число ячеек общей клетки: {self.number + other.number}'
 
-    # def __sub__(self, other):
-    #
-    # def __mul__(self, other):
-    #
-    # def __truediv__(self, other):
-    #
-    # def make_order(self):
+    def __sub__(self, other):
+        if self.number - other.number > 0:
+            return f'Разность количества ячеек клеток: {self.number - other.number}'
+        else:
+            return 'Разность количества ячеек клеток меньше нуля. Вычитание невозможно!'
+
+    def __mul__(self, other):
+        new_cell = Cell(self.number * other.number)
+        return f'В результате умножения создана новая клетка, количество ее ячеек: {new_cell.number}'
+
+    def __truediv__(self, other):
+        new_cell = Cell(int(self.number / other.number))
+        return f'В результате деления создана новая клетка, количество ее ячеек: {new_cell.number}'
+
+    def make_order(self, row):
+        self.row = row
+        counter = 1
+        unit = '*'
+        new_list = []
+        for i in range(1, self.number + 1):
+            if counter % self.row != 0:
+                new_list.append(unit)
+            else:
+                new_list.append('*\n')
+            counter += 1
+        return f'Результат организации клетки "{self}" по рядам:\n{"".join(new_list)}'
 
 
-cell1 = Cell(15, 3)
-cell2 = Cell(10, 3)
+cell1 = Cell(15)
+cell2 = Cell(10)
 
 print(cell1 + cell2)
+print(cell1 - cell2)
+print(cell2 - cell1)
+print(cell1 * cell2)
+print(cell1 / cell2)
+print(cell1.make_order(6))
+print(cell2.make_order(3))
