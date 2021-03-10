@@ -10,24 +10,42 @@
 реализовать абстрактные классы для основных классов проекта,
 проверить на практике работу декоратора @property.
 """
+from abc import ABC, abstractmethod
 
 
-class Clothes:
+class Clothes(ABC):
     def __init__(self, name):
-        self.name = name
+        self.name = name.title()
+
+    @abstractmethod
+    def consumption(self):
+        ...
 
 
 class Coat(Clothes):
     def __init__(self, name, v):
         super().__init__(name)
         self.v = v
+        self.param = 'размер'
+
+    @property
+    def consumption(self):
+        return self.v / 6.5 + 0.5
 
 
 class Suit(Clothes):
     def __init__(self, name, h):
         super().__init__(name)
         self.h = h
+        self.param = 'рост'
+
+    @property
+    def consumption(self):
+        return 2 * self.h + 0.3
 
 
-my_suit = Suit('Костюм', 10)
-print(my_suit.name, my_suit.h)
+my_suit = Suit('костюм', 170)
+my_coat = Coat('пальто', 50)
+print(f'Изделие: {my_suit.name}, {my_suit.param}: {my_suit.h}, расход ткани: {my_suit.consumption}')
+print(f'Изделие: {my_coat.name}, {my_coat.param}: {my_coat.v}, расход ткани: {my_coat.consumption:.4f}')
+print(f'Общий расход ткани: {(my_suit.consumption + my_coat.consumption):.4f}')
