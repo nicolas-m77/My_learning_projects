@@ -45,4 +45,3 @@ class Date:
 date = input('Введите дату в формате «день-месяц-год» не далее текущей: ')
 int_date = Date.int_date(date)
 Date.date_check(int_date)
-print(03)
