@@ -11,3 +11,22 @@
 пользователю ввести текст (не число) и отобразить соответствующее сообщение. 
 При этом работа скрипта не должна завершаться.
 """
+
+
+class MyException(Exception):
+    def __init__(self, some_text):
+        self.some_text = some_text
+
+
+my_list = []
+elem = input('Введите элемент списка (число). Чтобы закончить ввод введите stop: ')
+while elem.lower() != 'stop':
+    try:
+        if elem.isdigit():
+            my_list.append(elem)
+        else:
+            raise MyException('Введенный элемент не является числом!')
+    except MyException as e:
+        print(e)
+    elem = input('Введите элемент списка (число): ')
+print('Список введенных элементов:', my_list)
