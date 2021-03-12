@@ -9,8 +9,6 @@ import datetime
 
 
 class Date:
-    def __init__(self, my_date):
-        self.my_date = my_date
 
     @classmethod
     def int_date(cls, x):
@@ -42,6 +40,6 @@ class Date:
         print(day, month, year)
 
 
-date = input('Введите дату в формате «день-месяц-год» не далее текущей: ')
-int_date = Date.int_date(date)
+my_date = input('Введите дату в формате «день-месяц-год» не далее текущей: ')
+int_date = Date.int_date(my_date)
 Date.date_check(int_date)
