@@ -20,8 +20,6 @@ def division(a, b):
             return a / b
     except MyError as e:
         return e
-    # finally:
-    #     print('\n')
 
 
 print('Сейчас трижды будет совершено деление введенных Вами чисел.\n')
