@@ -9,18 +9,13 @@
 class ComplexNumber:
 
     def __init__(self, real, imaginary):
-        self.real = real
-        self.imaginary = imaginary
-
-    @property
-    def get_complex(self):
-        return complex(self.real, self.imaginary)
+        self.complex = complex(real, imaginary)
 
     def __add__(self, other):
-        return complex(self.real, self.imaginary) + complex(other.real, other.imaginary)
+        return self.complex + other.complex
 
     def __mul__(self, other):
-        return complex(self.real, self.imaginary) * complex(other.real, other.imaginary)
+        return self.complex * other.complex
 
 
 a = int(input('Введите вещественную часть первого комплексного числа: '))
@@ -29,7 +24,7 @@ c = int(input('Введите вещественную часть второго
 d = int(input('Введите мнимую часть второго комплексного числа: '))
 complex_number_1 = ComplexNumber(a, b)
 complex_number_2 = ComplexNumber(c, d)
-print('Первое введенное число:', complex_number_1.get_complex)
-print('Второе комплексное число:', complex_number_2.get_complex)
+print('Первое введенное число:', complex_number_1.complex)
+print('Второе комплексное число:', complex_number_2.complex)
 print('Результат сложения чисел:', complex_number_1 + complex_number_2)
 print('Результат произведения чисел:', complex_number_1 * complex_number_2)
